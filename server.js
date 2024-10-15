@@ -15,7 +15,7 @@ const app = express()
 //Middleware para parsear JSON
 app.use(express.json())
 
-//Configuracion cors
+//Configuración cors
 const corsOptions = {
     origin: 'https://watermelonroll.netlify.app',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
