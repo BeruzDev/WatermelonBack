@@ -4,6 +4,7 @@ const mongoose = require('mongoose')
 const dotenv = require('dotenv')
 const userRoutes = require('./routes/userRoutes')
 const videoRoutes = require('./routes/videoRoutes')
+const cors = require('cors')
 
 //Configurar dotenv para manejar variables de entorno
 dotenv.config()
@@ -13,6 +14,16 @@ const app = express()
 
 //Middleware para parsear JSON
 app.use(express.json())
+
+//Configuracion cors
+const corsOptions = {
+    origin: 'https://watermelonroll.netlify.app',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: false,
+    optionsSuccessStatus: 204
+};
+
+app.use(cors(corsOptions));
 
 //Puerto del servidor
 const PORT = process.env.PORT || 5000
