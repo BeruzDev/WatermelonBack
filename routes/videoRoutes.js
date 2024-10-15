@@ -5,7 +5,7 @@ const Video = require('../models/Video')
 //Rutas
 
 //Obtener todos los videos
-router.get('/', async (req, res) => {
+router.get('/all', async (req, res) => {
     try {
         const videos = await Video.find()
         res.json(videos)
